@@ -36,3 +36,7 @@ jobs:
           echo test, and deploy your project.
       - name: Run a node app
         run: node index.js
+      - name : log the secret
+        run: |
+          echo GITHUB_TOKEN ${{ secrets.GITHUB_TOKEN }}
+          echo AWS_ACCESS_KEY ${{ secrets.AWS_ACCESS_KEY }}
