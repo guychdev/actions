@@ -36,3 +36,9 @@ jobs:
           echo test, and deploy your project.
       - name: Run a node app
         run: node index.js
+      - uses: actions/checkout@v2
+      - name: Lint Code Base
+        uses: docker://github/super-linter:v3
+        env:
+          VALIDATE_ALL_CODEBASE: false
+          DEFAULT_BRANCH: master
